@@ -1,5 +1,4 @@
 <html lang="ja">
-  ]
   <head>
     <meta charset="UTF-8" />
     <title>Ionic CDN Sample</title>
@@ -16,7 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
     />
     <script>
-      handleButtonClick = async () => {
+      openLoading = async () => {
         const loading = document.createElement("ion-loading");
         loading.message = "Please wait...";
         loading.duration = 3000;
@@ -38,7 +37,7 @@
       </ion-header>
       <ion-content>
         <ion-toggle></ion-toggle>
-        <ion-button expand="block" onClick="handleButtonClick()">
+        <ion-button expand="block" onClick="openLoading()">
           Open Loading
         </ion-button>
       </ion-content>
