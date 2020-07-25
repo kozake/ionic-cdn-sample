@@ -1,0 +1,47 @@
+<html lang="ja">
+  ]
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ionic CDN Sample</title>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+    <script>
+      handleButtonClick = async () => {
+        const loading = document.createElement("ion-loading");
+        loading.message = "Please wait...";
+        loading.duration = 3000;
+
+        document.body.appendChild(loading);
+        await loading.present();
+
+        const { role, data } = await loading.onDidDismiss();
+        console.log("Loading dismissed!");
+      };
+    </script>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Ionic CDN Sample</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-toggle></ion-toggle>
+        <ion-button expand="block" onClick="handleButtonClick()">
+          Open Loading
+        </ion-button>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>
